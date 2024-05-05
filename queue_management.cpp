@@ -51,6 +51,22 @@ class Queue {
 
 		return res;
 	}
+
+	Queue operator*(Queue &q2) {
+		Queue res;
+
+
+		if (this->size != q2.size) {
+			cout << "queue sizes are not equal, can't multiply."<<endl; 
+            return res;
+		}
+
+		for (int i=0; i<this->size; i++) {
+			res.add(this->queue[i] * q2.queue[i]);
+		}
+
+		return res;
+	}
 	
 }; 
 
@@ -61,6 +77,9 @@ int main() {
 	q2.add(3); q2.add(66); q2.add(128);  q2.add(5);
 	Queue q3 = q1+q2;
 	q3.print();
+
+	Queue q4 = q1*q2;
+	q4.print();
 
 	return 0; 
 } 
