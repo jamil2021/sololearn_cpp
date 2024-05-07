@@ -2,8 +2,9 @@
 using namespace std; 
 
 class Queue { 
-	int size; 
-	int* queue; 
+	protected:
+	   int size; 
+	   int* queue; 
 	
 	public:
 	Queue() { 
@@ -36,50 +37,41 @@ class Queue {
 		} 
 		cout << endl;
 	}
-	//your code goes here
-	Queue operator+(Queue &q2) {
-		Queue res;
-
-
-		for (int i=0; i<this->size; i++) {
-			res.add(this->queue[i]);
-		}
-
-		for (int i=0; i<q2.size; i++) {
-			res.add(q2.queue[i]);
-		}
-
-		return res;
-	}
-
-	Queue operator*(Queue &q2) {
-		Queue res;
-
-
-		if (this->size != q2.size) {
-			cout << "queue sizes are not equal, can't multiply."<<endl; 
-            return res;
-		}
-
-		for (int i=0; i<this->size; i++) {
-			res.add(this->queue[i] * q2.queue[i]);
-		}
-
-		return res;
-	}
-	
+	Queue operator+(Queue &obj) {
+        Queue res;
+        for(int i=0;i<this->size;i++) {
+            res.add(this->queue[i]);
+        }
+        for(int i=0;i<obj.size;i++) {
+            res.add(obj.queue[i]);
+        }
+        return res; 
+    }
 }; 
+
+//your code goes here
+class Queue2: public Queue {
+	public:
+	void print() {
+		if (size == 0) { 
+			cout << "Queue is empty"<<endl; 
+			return; 
+		} 
+		for (int i = 0; i < size; i++) { 
+			cout<<queue[i]<<endl;
+		} 
+		cout << endl;
+	}
+};
 
 int main() { 
 	Queue q1; 
 	q1.add(42); q1.add(2); q1.add(8);  q1.add(1);
-	Queue q2;
-	q2.add(3); q2.add(66); q2.add(128);  q2.add(5);
-	Queue q3 = q1+q2;
-	q3.print();
-
-	Queue q4 = q1*q2;
-	q4.print();
+    q1.print();
+    
+	Queue2 q2;
+	q2.add(3); q2.add(66); q2.add(128);  q2.add(5);q2.add(111);q2.add(77890);
+	q2.print();
 
 	return 0; 
 } 
