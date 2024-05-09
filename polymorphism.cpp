@@ -33,7 +33,9 @@ int main() {
     Animal *a1 = &c1;
     Animal *a2 = &d1;
     
+    // array pointers to Animal objects
     Animal* arr[] = {a1, a2}; 
+    // call the speak method using array of pointers to Animal objects in a loop
     for(int i=0;i<2;i++){
         arr[i]->speak();
     }
