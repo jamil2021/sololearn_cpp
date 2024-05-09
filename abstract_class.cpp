@@ -30,7 +30,9 @@ int main()
     Vehicle *v1 = &c;
     Vehicle *v2 = &b;
 
+    // calling drive method of Car class using pointer of Vehicle class
     v1->drive();
+    // calling drive method of Bicycle class using pointer of Vehicle class
     v2->drive();
 
     return 0;
