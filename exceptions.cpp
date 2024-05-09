@@ -12,10 +12,12 @@ int main() {
             cout << menu[x] << endl;
         }
         else {
+            // throw exception of int type
             throw 404;
         }
         
     }
+    // ellipsis (...) means it will catch any type of exception
     catch(...) {
         //and here
         cout << "404 - not found" << endl;
