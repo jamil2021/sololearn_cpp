@@ -26,18 +26,18 @@ int main() {
     // Read data from the input file and write to the output file
     string line;
     while (getline(inputFile, line)) {
-        // Process the data (for demonstration, just echo the line back)
-        cout << "Read from input file: " << line << endl;
-        
-        // Write the processed data to the output file
-        outputFile << line << endl;
+        // Check if the line starts with '#' or '##'
+        if (line.size() > 0 && (line[0] == '#' || (line.size() > 1 && line[0] == '#' && line[1] == '#'))) {
+            // Write the line to the output file
+            outputFile << line << endl;
+        }
     }
     
     // Close the files
     inputFile.close();
     outputFile.close();
     
-    cout << "Data has been read from " << inputFileName << " and written to " << outputFileName << endl;
+    cout << "Filtered data has been written to " << outputFileName << endl;
     
     return 0;
 }
