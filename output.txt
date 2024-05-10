@@ -1,2 +1,4 @@
 # sololearn_cpp
 ## Queue Management
+Given the Queue class, overload the + operator, so that the code in main works and successfully adds two queues#.
+The overloaded operator should return a new Queue object, which contains the elements of the first queue, followed by the elements of the second queue##.

@@ -26,8 +26,8 @@ int main() {
     // Read data from the input file and write to the output file
     string line;
     while (getline(inputFile, line)) {
-        // Check if the line starts with '#' or '##'
-        if (line.size() > 0 && (line[0] == '#' || (line.size() > 1 && line[0] == '#' && line[1] == '#'))) {
+        // Check if the line contains '#' or '##'
+        if (line.find('#') != string::npos || line.find("##") != string::npos) {
             // Write the line to the output file
             outputFile << line << endl;
         }
