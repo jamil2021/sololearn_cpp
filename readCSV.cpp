@@ -20,15 +20,6 @@ int main() {
     // Read data from the CSV file
     string line;
     getline(file, line); // Read and discard the header line
-
-    getline(file, line); // Read next for testing
-    stringstream ss(line);
-    string token;
-    getline(ss, token, ',');
-    cout << token << endl;
-    getline(ss, token, ',');
-    cout << token << endl;
-
     while (getline(file, line)) {
         stringstream ss(line);
         string token;
