@@ -32,5 +32,7 @@ int main() {
     
     Engine e(power);
     //your code goes here
-
+    Car c(e, color, year);
+    c.start();
+    return 0;
 }
