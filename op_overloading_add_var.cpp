@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std; 
+
 class MyClass {
  public:
   int var;
@@ -11,3 +14,12 @@ class MyClass {
    return res; 
   }
 };
+
+int main() {
+    MyClass obj1(10);
+    MyClass obj2(20);
+    MyClass obj3;
+    obj3=obj1+obj2;
+    cout<<obj3.var<<endl;
+    return 0;
+}
